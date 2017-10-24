@@ -39,7 +39,7 @@ module Fastlane
         end
 
       rescue Faraday::Error::TimeoutError
-        say_error "Timed out while uploading mapping file to Bugly." and abort
+        UI.user_error! "Timed out while uploading mapping file to Bugly." and abort
       end
 
       def self.parse_response(response)
