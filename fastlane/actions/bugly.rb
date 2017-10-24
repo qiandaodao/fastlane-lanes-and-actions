@@ -9,7 +9,7 @@ module Fastlane
 
         UI.message('Starting uploading mapping file to Bugly...')
 
-        connection = Faraday.new(:url => "https://api.bugly.qq.com", :request => { :timeout => 120 }) do |builder|
+        connection = Faraday.new(:url => "https://api.bugly.qq.com", :request => { :timeout => 300 }) do |builder|
           builder.request :multipart
           builder.response :logger
           builder.response :json, :content_type => /\bjson$/
